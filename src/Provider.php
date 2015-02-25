@@ -17,7 +17,9 @@ class Provider extends AbstractProvider implements ProviderInterface
      */
     protected function getAuthUrl($state)
     {
-        return $this->buildAuthUrlFromBase('https://connect.stripe.com/oauth/authorize', $state);
+        return $this->buildAuthUrlFromBase(
+            'https://connect.stripe.com/oauth/authorize', $state
+        );
     }
 
     /**
@@ -33,9 +35,9 @@ class Provider extends AbstractProvider implements ProviderInterface
      */
     protected function getUserByToken($token)
     {
-        $response = $this->getHttpClient()->get('https://api.stripe.com/v1/account', [
+        $response = $this->getHttpClient()->get(
+            'https://api.stripe.com/v1/account', [
             'headers' => [
-                'Accept'        => 'application/json',
                 'Authorization' => 'Bearer '.$this->clientSecret,
             ],
         ]);
@@ -49,11 +51,8 @@ class Provider extends AbstractProvider implements ProviderInterface
     protected function mapUserToObject(array $user)
     {
         return (new User())->setRaw($user)->map([
-            'id'       => $user['id'],
-            'nickname' => $user['display_name'],
-            'name'     => null,
-            'email'    => $user['email'],
-            'avatar'   => null,
+            'id' => $user['id'], 'nickname' => $user['display_name'],
+            'name' => null, 'email' => $user['email'], 'avatar' => null,
         ]);
     }
 
@@ -62,6 +61,8 @@ class Provider extends AbstractProvider implements ProviderInterface
      */
     protected function getTokenFields($code)
     {
-        return array_merge(parent::getTokenFields($code), ['grant_type' => 'authorization_code']);
+        return array_merge(parent::getTokenFields($code), [
+            'grant_type' => 'authorization_code',
+        ]);
     }
 }
