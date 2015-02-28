@@ -1,5 +1,11 @@
 # Stripe OAuth2 Provider for Laravel Socialite
 
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/SocialiteProviders/Stripe.svg?style=flat-square)](https://scrutinizer-ci.com/g/SocialiteProviders/Stripe/?branch=master)
+[![Latest Stable Version](https://img.shields.io/packagist/v/socialiteproviders/stripe.svg?style=flat-square)](https://packagist.org/packages/socialiteproviders/stripe)
+[![Total Downloads](https://img.shields.io/packagist/dt/socialiteproviders/stripe.svg?style=flat-square)](https://packagist.org/packages/socialiteproviders/stripe)
+[![Latest Unstable Version](https://img.shields.io/packagist/vpre/socialiteproviders/stripe.svg?style=flat-square)](https://packagist.org/packages/socialiteproviders/stripe)
+[![License](https://img.shields.io/packagist/l/socialiteproviders/stripe.svg?style=flat-square)](https://packagist.org/packages/socialiteproviders/stripe)
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Contents
