@@ -1,4 +1,5 @@
 <?php
+
 namespace SocialiteProviders\Stripe;
 
 use SocialiteProviders\Manager\SocialiteWasCalled;
