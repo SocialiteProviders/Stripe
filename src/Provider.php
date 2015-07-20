@@ -39,7 +39,7 @@ class Provider extends AbstractProvider implements ProviderInterface
         $response = $this->getHttpClient()->get(
             'https://api.stripe.com/v1/account', [
             'headers' => [
-                'Authorization' => 'Bearer '.$this->clientSecret,
+                'Authorization' => 'Bearer '.$token,
             ],
         ]);
 
