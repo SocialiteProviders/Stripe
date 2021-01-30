@@ -2,6 +2,7 @@
 
 namespace SocialiteProviders\Stripe;
 
+use Illuminate\Support\Arr;
 use SocialiteProviders\Manager\OAuth2\AbstractProvider;
 use SocialiteProviders\Manager\OAuth2\User;
 
@@ -66,8 +67,11 @@ class Provider extends AbstractProvider
         }
 
         return (new User())->setRaw($user)->map([
-            'id'   => $user['id'], 'nickname' => $nickname,
-            'name' => null, 'email' => $user['email'], 'avatar' => null,
+            'id'   => $user['id'],
+            'nickname' => $nickname,
+            'name' => null,
+            'email' => Arr::get($user, 'email'),
+            'avatar' => null,
         ]);
     }
 
